@@ -1,0 +1,14 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+    --LightGrayishBlue: hsl(220, 16%, 96%);
+    --GrayishBlue: hsl(233, 8%, 62%);
+    --BrightCyan: hsl(192, 70%, 51%);
+    --LimeGreen: hsl(136, 65%, 51%);
+    --DarkBlue: hsl(233, 26%, 24%);
+}
+
+body {
+    font-family: "Public Sans";
+    font-size: 18px;
+}
