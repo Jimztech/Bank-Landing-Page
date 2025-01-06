@@ -1,3 +1,13 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+img, button {
+    display: inline-block;
+}
 :root {
     --White: hsl(0, 0%, 100%);
     --VeryLightGray: hsl(0, 0%, 98%);
@@ -6,9 +16,102 @@
     --BrightCyan: hsl(192, 70%, 51%);
     --LimeGreen: hsl(136, 65%, 51%);
     --DarkBlue: hsl(233, 26%, 24%);
+    --Transparent: rgba(255, 255, 255, 0.5);
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Public Sans";
+    font-size: 1.13rem;
+    position: relative;
+    z-index: auto;
 }
 
-body {
-    font-family: "Public Sans";
-    font-size: 18px;
+/* Header styling */
+ul {
+    list-style: none;
+}
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover {
+    display: inline-block;
+    text-decoration: none;
+    font-size: inherit;
+}
+a {
+    color: var(--DarkBlue);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    z-index: 10; /* before 1*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--White);
+}
+header > .header-button {
+    display: none;
+}
+.open-menu {
+    position: relative;
+    z-index: 15;
+}
+.nav-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    width: 65%;
+    background-color: var(--Transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 9rem 2rem;
+    z-index: 11; /* before 3 */
+    transition: 0.3s ease;
+    cursor: pointer;
+    display: none;
+}
+button {
+    max-width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: white;
+}
+
+
+
+/* Media Queries */
+@media (min-width: 900px) {
+    .open-menu {
+        display: none;
+    }
+    header > .header-button {
+        display: inline-block;
+    }
+    .nav-links {
+        all: unset;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+    a {
+        color: var(--GrayishBlue);
+    }
+    .nav-links > li > a:hover {
+        color: var(--DarkBlue);
+        cursor: pointer;
+        border-bottom: 2px solid var(--LimeGreen);
+    }
 }
