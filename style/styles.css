@@ -94,10 +94,8 @@ button {
 
 /* Main styling */
 .main {
-    padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
 }
 
 
@@ -107,15 +105,60 @@ h1 {
     font-weight: 400;
     color: var(--DarkBlue);
     font-size: 48px;
+    line-height: 1.2;
+}
+h2 {
+    text-align: center;
+    font-weight: 300;
+    color: var(--DarkBlue);
+    font-size: 1.6rem;
 }
 p {
     text-align: center;
     color: var(--GrayishBlue);
-}
-.hero-button {
     margin-top: 1rem;
 }
+.articles > .content-card > section > span {
+    font-size: 0.8rem;
+    color: var(--GrayishBlue);
+}
+.articles > .content-card > section > h3 {
+    color: var(--DarkBlue);
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+.articles > .content-card > section > p {
+    text-align: left;
+}
+.hero-button {
+    margin-top: 2rem;
+}
 .button-container {
+    text-align: center;
+}
+footer > section > button {
+    text-align: center;
+}
+footer > section > p {
+    color: var(--White);
+}
+footer > section > span  {
+    color: var(--GrayishBlue);
+}
+
+
+/* Image styling */
+.hero-image {
+    height: 100%;
+    width: 100%;
+}
+.articles > .content-card > img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+footer > .logo-section {
     text-align: center;
 }
 
@@ -141,4 +184,76 @@ p {
         cursor: pointer;
         border-bottom: 2px solid var(--LimeGreen);
     }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        position: relative;
+    }
+    .mockup {
+        position: absolute;
+        top: -40px;
+        left: 0;
+    }
+}
+
+@media (max-width: 899px) {
+    .hero {
+        position: relative;
+    }
+    .mockup {
+        position: absolute;
+        bottom: 150px;
+        left: 0;
+    }
+}
+
+/* Container styling */
+.hero-subsection {
+    padding: 2rem 0;
+    text-align: center;
+}
+.section {
+    padding: 1rem;
+}
+.features {
+    background-color: var(--LightGrayishBlue);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.feature-card {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem 0;
+}
+.articles {
+    padding: 2rem 1rem;
+    background-color: var(--VeryLightGray);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.content-card > section {
+    background-color: var(--White);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding: 1.5rem;
+}
+.content-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 1rem;
+}
+footer {
+    background-color: var(--DarkBlue);
+}
+footer > section {
+    text-align: center;
+}
+.last-elements {
+    margin-top: 2rem;
+}
+.last-elements > span {
+    display: block;
+    margin-top: 1rem;
 }
