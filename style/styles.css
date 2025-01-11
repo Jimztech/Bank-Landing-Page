@@ -196,11 +196,19 @@ footer > .logo-section {
     grid-template-columns: 1fr;
     border-radius: 1rem;
 }
+.content-card > section > h3:hover {
+    color: var(--LimeGreen);
+}
 footer {
     background-color: var(--DarkBlue);
 }
 footer > section {
     text-align: center;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 .last-elements {
     margin-top: 2rem;
@@ -251,11 +259,12 @@ footer > section {
     .hero-subsection {
         grid-column: 1/2;
         grid-row: 1;
+        padding: 1rem;
     }
     .mockup {
         position: absolute;
         bottom: -100px;
-        left: 700px; 
+        left: 650px; 
     }
 
     /* text styling */
@@ -293,6 +302,26 @@ footer > section {
     .articles > h2 {
         grid-column: 1/-1;
         grid-row: 1;
+    }
+
+    /* Footer styling */
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+    }
+    .footer-logo, .last-elements {
+        text-align: left;
+    }
+    .social-icons {
+        all: unset;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .footer > section > p:hover {
+        color: var(--LimeGreen);
     }
     .section {
         padding: 2rem 2rem;

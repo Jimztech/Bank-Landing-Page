@@ -11,3 +11,10 @@ openMenu.addEventListener("click", () => {
         openMenu.src = "./images/icon-close.svg"
     }
 });
+
+main.addEventListener("click", () => {
+    if(navbar.style.display === "flex") {
+        navbar.style.display = "none";
+        openMenu.src = "./images/icon-hamburger.svg";
+    }
+})
