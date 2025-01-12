@@ -89,6 +89,7 @@ button {
     border-radius: 1.5rem;
     background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
     color: white;
+    outline: none;
 }
 
 
@@ -326,6 +327,18 @@ footer > section {
     .section {
         padding: 2rem 2rem;
     }
+
+    /* second page or form styling */
+    .second-main {
+        background-image: url("../images/lime-green.jpg");
+        background-repeat: repeat;
+    }
+    .form-design {
+        padding: 3rem 3rem;
+    }
+    .successful-page {
+        padding: 3rem;
+    }
     
 }
 
@@ -348,6 +361,22 @@ footer > section {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    /* second page or form styling */
+    .second-main {
+        background-image: url("../images/lime-green.jpg");
+        background-repeat: no-repeat;
+    }
+    .form-design {
+        padding: 5rem 3rem;
+    }
+    input[type=text], input[type=email], input[type=number], input[type=submit] {
+        font-size: 1rem;
+    }  
+    .successful-page {
+        padding: 3rem 0.5rem;
+    }
+
 }
 
 @media (min-width: 501px) and (max-width: 899px) {
@@ -369,4 +398,61 @@ footer > section {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    /* Second page or form styling */
+    .second-main {
+        background-image: url("../images/lime-green.jpg");
+    }
+    .form-design {
+        padding: 5rem 3.5rem;
+    }
+    input[type=text], input[type=email], input[type=number], input[type=submit] {
+        font-size: 1.5rem;
+    }
+    .successful-page {
+        padding: 3rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Second page or form styling */
+.second-main {
+    display: grid;
+    place-content: center;
+}
+.img-container {
+    display: block;
+    text-align: center;
+}
+.form-design {
+    background-color: var(--White);
+    border-radius: 10px;
+}
+.submit-wrapper {
+    text-align: center;
+}
+input[type=submit] {
+    background-color: var(--LimeGreen);
+    color: var(--White);
+    cursor: pointer;
+}
+input[type=text], input[type=email], input[type=number], input[type=submit] {
+    border: 1px solid #b9b6d3;
+    width: 100%;
+    padding: 18px 35px;
+    border-radius: 5px;
+    margin: 12px 0;
+    font-size: 1rem;
+}
+
+/* Js validation for form styling*/
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    text-align: right;
+}
+.successful-page {
+    background: var(--White);
+    border-radius: 8px;
 }
