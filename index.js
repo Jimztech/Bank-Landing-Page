@@ -1,7 +1,10 @@
 const main = document.querySelector(".main");
 const openMenu = document.querySelector(".open-menu");
 const navbar = document.querySelector(".nav-links");
-const requestBtn = document.querySelector(".btn");
+const requestBtns = document.querySelectorAll(".btn");
+const userName = document.getElementById("fname");
+const emailAddress = document.getElementById("email");
+const submitBtn = document.getElementById("submit");
 const body = document.body;
 
 openMenu.addEventListener("click", () => {
@@ -22,9 +25,14 @@ main.addEventListener("click", () => {
 });
 
 // New Page powered by requestBtn.
-requestBtn.addEventListener("click", function(event) {
-    event.preventDefault();
+requestBtns.forEach(btn => {
+    btn.addEventListener("click", function(event) {
+        event.preventDefault();
+        loadSecondPage();
+    });
+});
 
+function loadSecondPage() {
     body.innerHTML = `
         <main id="second-main">
             <div class="img-container">
@@ -54,4 +62,7 @@ requestBtn.addEventListener("click", function(event) {
             </div>
         </main>
     `
-})
+}
+
+
+// Third page powered by 

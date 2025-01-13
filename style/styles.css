@@ -329,7 +329,7 @@ footer > section {
     }
 
     /* second page or form styling */
-    .second-main {
+    #second-main {
         background-image: url("../images/lime-green.jpg");
         background-repeat: repeat;
     }
@@ -363,9 +363,9 @@ footer > section {
     }
 
     /* second page or form styling */
-    .second-main {
+    #second-main {
         background-image: url("../images/lime-green.jpg");
-        background-repeat: no-repeat;
+        background-repeat: repeat;
     }
     .form-design {
         padding: 5rem 3rem;
@@ -400,7 +400,7 @@ footer > section {
     }
 
     /* Second page or form styling */
-    .second-main {
+    #second-main {
         background-image: url("../images/lime-green.jpg");
     }
     .form-design {
@@ -417,9 +417,13 @@ footer > section {
 
 
 /* Second page or form styling */
-.second-main {
+html, body {
+    height: 100%; /* Ensure the full height for all content */
+}
+#second-main {
     display: grid;
     place-content: center;
+    height: 100%;
 }
 .img-container {
     display: block;
