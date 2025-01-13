@@ -37,7 +37,7 @@ function loadSecondPage() {
             </div>
 
             <div class="form-design">
-                <form action="contact-form">
+                <form action="contact-form" id="contact-form">
                     <input type="hidden" name="contact_number" value="697483">
                     <div class="input-wrapper">
                         <span class="error-message" id="fname-error"></span>
@@ -54,7 +54,7 @@ function loadSecondPage() {
                     </div>
 
                     <div class="submit-wrapper">
-                        <input type="submit" id="submit" value="Submit">
+                        <input type="submit" id="submit" value="Submit" onclick="sendMail()">
                     </div>
                 </form>
             </div>
@@ -106,6 +106,11 @@ function loadSecondPage() {
             </div>
         `
     }
+
+    document.getElementById("contact-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        sendMail();
+    });
 }
 
 
@@ -125,21 +130,47 @@ function validateEmail(email) {
     return emailPattern.test(email);
 }
 
-
 // EmailJs functionalities
 emailjs.init({
     publickey: "rvnovK00iJVgvpzlJ",
 });
 
-window.onload = function() {
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // these IDs from the previous steps
-        emailjs.sendForm('contact_service', 'contact_form', this)
-            .then(() => {
-                console.log('SUCCESS!');
-            }, (error) => {
-                console.log('FAILED...', error);
-            });
-    });
-};
+/*
+function sendMail() {
+    let details = {
+        user_name : document.getElementById("fname").value,
+        user_email : document.getElementById("email").value,
+    }
+    emailjs.send("service_y7yv16d", "template_97dqfjn", details).then(alert("Email sent!!"));
+}
+
+*/
+
+function sendMail() {
+    const fnameInput = document.getElementById("fname");
+    const emailInput = document.getElementById("email");
+
+    if (!fnameInput || !emailInput) {
+        alert("Form elements are not loaded yet!");
+        return;
+    }
+
+    const details = {
+        user_name: fnameInput.value,
+        user_email: emailInput.value,
+    };
+
+    emailjs
+        .send("service_y7yv16d", "template_97dqfjn", details)
+        .then(() => {
+            alert("Email sent successfully!");
+        })
+        .catch((error) => {
+            console.error("Error sending email:", error);
+            if (error && error.text) {
+                alert("Failed to send email: " + error.text);
+            } else {
+                alert("Failed to send email. Please check your setup.");
+            }
+        });
+}
