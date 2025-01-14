@@ -133,7 +133,7 @@ function validateEmail(email) {
 // EmailJs functionalities
 emailjs.init({
     publickey: "rvnovK00iJVgvpzlJ",
-});
+})
 
 /*
 function sendMail() {
@@ -159,18 +159,22 @@ function sendMail() {
         user_name: fnameInput.value,
         user_email: emailInput.value,
     };
+// service_y7yv16d
+// template_97dqfjn
 
     emailjs
-        .send("service_y7yv16d", "template_97dqfjn", details)
+        .send("service_y7yv16d", "template_1wal03o", details, "rvnovK00iJVgvpzlJ")
         .then(() => {
             alert("Email sent successfully!");
         })
         .catch((error) => {
             console.error("Error sending email:", error);
             if (error && error.text) {
-                alert("Failed to send email: " + error.text);
+                console.error("Failed to send email: " + error.cause);
+                console.log(error)
             } else {
                 alert("Failed to send email. Please check your setup.");
+                console.log(error)
             }
         });
 }
